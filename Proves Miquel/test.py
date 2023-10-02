@@ -1,36 +1,34 @@
-import shodan
-import requests
+from shodan import Shodan
+import socket
 
-SHODAN_API_KEY = '4Amc7zrhesa5R46pY4tRn1ISrUX0H4hC'
-api = shodan.Shodan(SHODAN_API_KEY)
+#API Key
+api_key = 'EA2y81hle78OU28GmrhRJzbEzXZalgXd'
 
-target = 'www.insebre.cat/'
+def get_service_name(port):
+    try:
+        service_name = socket.getservbyport(port)
+        return service_name
+    except OSError:
+        return "Desconegut"
 
-dnsResolve = 'https://api.shodan.io/dns/resolve?hostnames=' + target + '&key=' + SHODAN_API_KEY
+api = Shodan(api_key)
+    
+# Solicita al usuari una direcció IP
+ip = input("Introueix una direcció IP: ")
 
-try:
-    # First we need to resolve our targets domain to an IP
-    resolved = requests.get(dnsResolve)
-    hostIP = resolved.json()[target]
+# Obteneix la informació de la IP
+ip_info = api.host(ip)
 
-    # Then we need to do a Shodan search on that IP
-    host = api.host(hostIP)
-    print("IP: %s" % host['ip_str'])
-    print("Organization: %s" % host.get('org', 'n/a'))
-    print("Operating System: %s" % host.get('os', 'n/a'))
+# Mostra els noms de domini asociats a la IP
+print("Noms de domini asociats a la IP:")
+for domain in ip_info['domains']:
+    print(domain)
 
-    # Print all banners
-    for item in host['data']:
-        print("Port: %s" % item['port'])
-        print("Banner: %s" % item['data'])
+# Mostra els ports oberts trobats per Shodan y els seus noms de servei
+print("\nPorts trobats per Shodan:")
+for port_info in ip_info['data']:
+    port = port_info['port']
+    service_name = get_service_name(port)
+    print(f"Port: {port} - Nom del servei: {service_name}")
 
-    #  Print vuln information
-    for item in host['vulns']:
-           CVE = item.replace('!','')
-           print('Vulns: %s' % item)
-           exploits = api.exploits.search(CVE)
-           for item in exploits['matches']:
-                   if item.get('cve')[0] == CVE:
-                           print(item.get('description'))
-except:
-    'An error occured'
+# Afegeix una funció on l'usuari pugui escriure el nom d'un servei (per exemple proftp) i es mostri un resultats amb ips i ports on s'hi pugui trobar aquest servei segons els resultats de Shodan.
