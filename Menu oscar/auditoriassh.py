@@ -1,13 +1,21 @@
 import subprocess
+import socket 
 
 def ssh_audit_all_ports(target):
-    used_ports = [] #Llista per emmagatzemar els ports en ús
+    used_ports = []  # Lista para almacenar los puertos en uso
+
+    # Escanear todos los puertos SSH en el rango 1-65535
     for port in range(1, 65536):
-        result = subprocess.run(["ssh-audit", "-p", str(port), target], capture_output=True, text=True)
-        output = result.stdout
-        if "SSH server running on" in output:
+        # Verificar si el puerto está en uso
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.settimeout(1)  # Tiempo de espera para la conexión (1 segundo)
+        resultado = sock.connect_ex((target, port))
+        sock.close()
+
+        if resultado == 0:
             print(f"Port {port} is used for SSH.")
             used_ports.append(port)
+
     if not used_ports:
         print("No SSH servers found on any port.")
 

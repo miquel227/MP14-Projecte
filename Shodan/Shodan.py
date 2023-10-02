@@ -1,9 +1,11 @@
+# Importem les llibreries necessàries de Shodan i de Python
 from shodan import Shodan
 import socket
 
-#API Key
+#Posem la nostra API Key obtinguda de Shodan
 api_key = 'EA2y81hle78OU28GmrhRJzbEzXZalgXd'
 
+#Funció per obtenir el nom del servei
 def get_service_name(port):
     try:
         service_name = socket.getservbyport(port)
@@ -11,6 +13,7 @@ def get_service_name(port):
     except OSError:
         return "Desconegut"
 
+# #Inicialitzem el client de Shodan amb la clau API
 api = Shodan(api_key)
     
 # Solicita al usuari una direcció IP
@@ -30,8 +33,6 @@ for port_info in ip_info['data']:
     port = port_info['port']
     service_name = get_service_name(port)
     print(f"Port: {port} - Nom del servei: {service_name}")
-
-# Afegeix una funció on l'usuari pugui escriure el nom d'un servei (per exemple proftp) i es mostri un resultats amb ips i ports on s'hi pugui trobar aquest servei segons els resultats de Shodan.
 
 # Funció per buscar informació sobre un servei amb límit de resultats i espaiat
 def search_service_info(api_key, service_name, max_results=10):
