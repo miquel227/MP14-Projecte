@@ -35,6 +35,14 @@ for port_info in ip_info['data']:
     print(f"Port: {port} - Nom del servei: {service_name}")
 
 # Funció per buscar informació sobre un servei amb límit de resultats i espaiat
+import shodan
+
+# Clau API de Shodan
+api_key = 'EA2y81hle78OU28GmrhRJzbEzXZalgXd'
+
+# Demana a l'usuari que introdueixi el nom del servei
+
+# Crida la funció de cerca de servei amb un límit de 10 resultats
 def search_service_info(api_key, service_name, max_results=10):
     # Inicialitza el client de Shodan amb la clau API
     api = shodan.Shodan(api_key)
@@ -62,4 +70,4 @@ api_key = 'EA2y81hle78OU28GmrhRJzbEzXZalgXd'
 service_name = input("Introdueix el nom del servei: ")
 
 # Crida la funció de cerca de servei amb un límit de 10 resultats
-search_service_info(api_key, service_name, max_results=1)
+search_service_info(api_key, service_name, max_results=10)
