@@ -1,33 +1,38 @@
 import subprocess
+import os
 
-def ejecutar_shodan():
+def executar_shodan():
     try:
-        # Ejecutar shodan.py desde la carpeta Shodan usando una ruta relativa
         subprocess.run(['python3', 'Fase de reconeixement/Shodan.py'])
     except FileNotFoundError:
-        print("El archivo Shodan.py no se encontró.")
+        print("L'arxiu Shodan.py no s'ha trobat.")
 
-def ejecutar_nmap():
+def executar_nmap():
     try:
-        # Ejecutar shodan.py desde la carpeta Shodan usando una ruta relativa
         subprocess.run(['python3', 'Auditoria de serveis/escaneignmap.py'])
     except FileNotFoundError:
-        print("El archivo Shodan.py no se encontró.")
-
+        print("L'arxiu escaneig_nmap.py no s'ha trobat.")
 
 def menu():
     while True:
-        print("1. Ejecutar Shodan")
-        print("2. Otra opción")
-        opcion = input("Selecciona una opción: ")
+        print("Menú:")
+        print("1. Executar Shodan")
+        print("2. Executar Nmap")
+        print("3. Sortir")
+        opcio = input("Selecciona una opció: ")
 
-        if opcion == "1":
-            ejecutar_shodan()
-        elif opcion == "2":
-            ejecutar_nmap()
-            pass
+        if opcio == "1":
+            os.system('clear' if os.name == 'posix' else 'cls')
+            executar_shodan()
+        elif opcio == "2":
+            os.system('clear' if os.name == 'posix' else 'cls')
+            executar_nmap()
+        elif opcio == "3":
+            os.system('clear' if os.name == 'posix' else 'cls')
+            print("Sortint del programa.")
+            break
         else:
-            print("Opción no válida. Inténtalo de nuevo.")
+            print("Opció no vàlida. Torna-ho a provar.")
 
 if __name__ == "__main__":
     menu()
