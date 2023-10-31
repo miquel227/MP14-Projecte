@@ -1,11 +1,11 @@
-from bot import mi_bot, funcion_remota
+from bot import TelegramBot
 import subprocess
 import socket
 import os
 
 def ssh_audit_all_ports(target):
     used_ports = []  # Llista per emmagatzemar els ports en ús
-    mensaje = ""
+
     # Escanejar tots els ports SSH en el rang 1-65535
     for port in range(1, 65536):
         # Verificar si el port està en ús
@@ -15,10 +15,12 @@ def ssh_audit_all_ports(target):
         sock.close()
 
         if resultat == 0:
-            mensaje += f"Port {port} és utilitzat per SSH.\n"
+            used_ports.append(port)
 
     if not used_ports:
-        print("No s'ha trobat cap servidor SSH en cap port.")
+        return "No s'ha trobat cap servidor SSH en cap port."
+    
+    return "\n".join([f"Port {port} és utilitzat per SSH." for port in used_ports])
 
 def ssh_audit():
     while True:
@@ -33,15 +35,29 @@ def ssh_audit():
         if opcio == '1':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
-            mensaje=subprocess.run(["ssh-audit", target])
-            mi_bot.enviar_mensaje(mensaje)
-            funcion_remota()
+            current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
+            output_file = os.path.join(current_directory, "AuditoriaBàsica.txt")
+            with open(output_file, "w") as output:
+                subprocess.run(["ssh-audit", target], stdout=output)
+            with open(output_file, "r") as file:
+                print("Contingut del fitxer:")
+                print(file.read())
+            mi_bot = TelegramBot()
+            mi_bot.enviar_document(output_file)
+            os.remove(output_file)
         elif opcio == '2':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
-            mensaje=ssh_audit_all_ports(target)
-            mi_bot.enviar_mensaje(mensaje)
-            funcion_remota()
+            current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
+            output_file = os.path.join(current_directory, "AuditoriaCompleta.txt")
+            output_text = ssh_audit_all_ports(target)  # Obtenir la sortida
+            with open(output_file, "w") as output:
+                output.write(output_text)  # Guardar la sortida al fitxer
+            print("Contingut del fitxer:")
+            print(output_text)  # Mostrar la sortida
+            mi_bot = TelegramBot()
+            mi_bot.enviar_document(output_file)
+            os.remove(output_file)
         elif opcio == '3':
             print("Tornant al menú principal.")
             break

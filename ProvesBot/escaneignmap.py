@@ -20,10 +20,13 @@ def escaneig_Nmap():
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
             output_file = os.path.join(current_directory, "HostsDeLaXarxa.txt")
             with open(output_file, "w") as output:
-                resultat = subprocess.run(["nmap", "-sn", subnet], stdout=output)
+                subprocess.run(["nmap", "-sn", subnet], stdout=output)
+            with open(output_file, "r") as file:
+                print("Contingut del fitxer:")
+                print(file.read())
             mi_bot = TelegramBot()
             mi_bot.enviar_document(output_file)
-            print(resultat)
+            os.remove(output_file)
         elif opcio == '2':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió que vols escanejar: ")
@@ -31,20 +34,38 @@ def escaneig_Nmap():
             output_file = os.path.join(current_directory, "PortsOberts.txt")
             with open(output_file, "w") as output:
                 subprocess.run(["nmap", "-p-", target], stdout=output)
+                with open(output_file, "r") as file:
+                    print("Contingut del fitxer:")
+                    print(file.read())
             mi_bot = TelegramBot()
             mi_bot.enviar_document(output_file)
+            os.remove(output_file)
         elif opcio == '3':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió que vols escanejar: ")
-            mensaje=subprocess.run(["nmap", "-sV", target])
-            mi_bot.enviar_mensaje(mensaje)
-            funcion_remota()
+            current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
+            output_file = os.path.join(current_directory, "Serveis/Versions.txt")
+            with open(output_file, "w") as output:
+                subprocess.run(["nmap", "-sV", target], stdout=output)
+                with open(output_file, "r") as file:
+                    print("Contingut del fitxer:")
+                    print(file.read())
+            mi_bot = TelegramBot()
+            mi_bot.enviar_document(output_file)
+            os.remove(output_file)
         elif opcio == '4':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió que vols escanejar: ")
-            mensaje=subprocess.run(["nmap", "--script", "vuln", target])
-            mi_bot.enviar_mensaje(mensaje)
-            funcion_remota()
+            current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
+            output_file = os.path.join(current_directory, "Vulnerabilitats.txt")
+            with open(output_file, "w") as output:
+                subprocess.run(["nmap", "--script", "vuln", target], stdout=output)
+                with open(output_file, "r") as file:
+                    print("Contingut del fitxer:")
+                    print(file.read())
+            mi_bot = TelegramBot()
+            mi_bot.enviar_document(output_file)
+            os.remove(output_file)
         elif opcio == '5':
             print("Tornant al menú principal.")
             break
