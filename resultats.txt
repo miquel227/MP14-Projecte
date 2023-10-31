@@ -1,0 +1,20 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2023-10-31 19:15 CET
+Nmap scan report for 192.168.203.1
+Host is up (0.00065s latency).
+Nmap scan report for _gateway (192.168.203.5)
+Host is up (0.00058s latency).
+Nmap scan report for 192.168.203.100
+Host is up (0.00055s latency).
+Nmap scan report for 192.168.203.103
+Host is up (0.00051s latency).
+Nmap scan report for 192.168.203.104
+Host is up (0.00029s latency).
+Nmap scan report for 192.168.203.120
+Host is up (0.00030s latency).
+Nmap scan report for 192.168.203.125
+Host is up (0.00098s latency).
+Nmap scan report for 192.168.203.126
+Host is up (0.00024s latency).
+Nmap scan report for miqueldieguez (192.168.203.127)
+Host is up (0.000039s latency).
+Nmap done: 256 IP addresses (9 hosts up) scanned in 2.21 seconds

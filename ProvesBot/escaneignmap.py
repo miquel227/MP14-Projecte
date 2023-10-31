@@ -1,4 +1,4 @@
-from bot import mi_bot, funcion_remota
+from bot import TelegramBot
 import subprocess
 import os
 
@@ -17,15 +17,22 @@ def escaneig_Nmap():
         if opcio == '1':
             os.system('clear' if os.name == 'posix' else 'cls')
             subnet = input("Introdueix la subxarxa que vols escanejar (p. ex. 192.168.1.0/24): ")
-            mensaje=subprocess.run(["nmap", "-sn", subnet])
-            mi_bot.enviar_mensaje(mensaje)
-            funcion_remota()
+            current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
+            output_file = os.path.join(current_directory, "HostsDeLaXarxa.txt")
+            with open(output_file, "w") as output:
+                resultat = subprocess.run(["nmap", "-sn", subnet], stdout=output)
+            mi_bot = TelegramBot()
+            mi_bot.enviar_document(output_file)
+            print(resultat)
         elif opcio == '2':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió que vols escanejar: ")
-            mensaje=subprocess.run(["nmap", "-p-", target])
-            mi_bot.enviar_mensaje(mensaje)
-            funcion_remota()
+            current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
+            output_file = os.path.join(current_directory, "PortsOberts.txt")
+            with open(output_file, "w") as output:
+                subprocess.run(["nmap", "-p-", target], stdout=output)
+            mi_bot = TelegramBot()
+            mi_bot.enviar_document(output_file)
         elif opcio == '3':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió que vols escanejar: ")
