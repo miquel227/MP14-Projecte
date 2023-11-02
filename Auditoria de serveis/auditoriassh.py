@@ -41,11 +41,11 @@ def ssh_audit():
             target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
             output_file = os.path.join(current_directory, "AuditoriaBàsica.txt")
-            output_text = ssh_audit_all_ports(target)  # Obtenir la sortida
             with open(output_file, "w") as output:
-                output.write(output_text)  # Guardar la sortida al fitxer
-            print("Contingut del fitxer:")
-            print(output_text)  # Mostrar la sortida
+                subprocess.run(["ssh-audit", target], stdout=output)
+            with open(output_file, "r") as file:
+                print("Contingut del fitxer:")
+                print(file.read())
             mi_bot = TelegramBot()
             mi_bot.enviar_document(output_file)
             os.remove(output_file)

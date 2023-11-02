@@ -1,5 +1,7 @@
 import subprocess
 import os
+script_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(script_dir)
 
 def executar_auditoriassh():
     try:
@@ -68,6 +70,6 @@ def menu():
             break
         else:
             print("Opció no vàlida. Torna-ho a provar.")
-            
+
 if __name__ == "__main__":
     menu()
