@@ -1,3 +1,7 @@
+import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from bot import TelegramBot
 import subprocess
 import socket
 import os
@@ -14,11 +18,13 @@ def ssh_audit_all_ports(target):
         sock.close()
 
         if resultat == 0:
-            print(f"Port {port} és utilitzat per SSH.")
             used_ports.append(port)
 
     if not used_ports:
-        print("No s'ha trobat cap servidor SSH en cap port.")
+        return "No s'ha trobat cap servidor SSH en cap port."
+    
+    return "\n".join([f"Port {port} és utilitzat per SSH." for port in used_ports])
+# ... Resta del teu codi ...
 
 def ssh_audit():
     while True:
@@ -33,11 +39,29 @@ def ssh_audit():
         if opcio == '1':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
-            subprocess.run(["ssh-audit", target])
+            current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
+            output_file = os.path.join(current_directory, "AuditoriaBàsica.txt")
+            output_text = ssh_audit_all_ports(target)  # Obtenir la sortida
+            with open(output_file, "w") as output:
+                output.write(output_text)  # Guardar la sortida al fitxer
+            print("Contingut del fitxer:")
+            print(output_text)  # Mostrar la sortida
+            mi_bot = TelegramBot()
+            mi_bot.enviar_document(output_file)
+            os.remove(output_file)
         elif opcio == '2':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
-            ssh_audit_all_ports(target)
+            current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
+            output_file = os.path.join(current_directory, "AuditoriaCompleta.txt")
+            output_text = ssh_audit_all_ports(target)  # Obtenir la sortida
+            with open(output_file, "w") as output:
+                output.write(output_text)  # Guardar la sortida al fitxer
+            print("Contingut del fitxer:")
+            print(output_text)  # Mostrar la sortida
+            mi_bot = TelegramBot()
+            mi_bot.enviar_document(output_file)
+            os.remove(output_file)
         elif opcio == '3':
             print("Tornant al menú principal.")
             break
