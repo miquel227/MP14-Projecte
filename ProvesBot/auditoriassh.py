@@ -1,7 +1,9 @@
+import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from bot import TelegramBot
 import subprocess
 import socket
-import os
 
 def ssh_audit_all_ports(target):
     used_ports = []  # Llista per emmagatzemar els ports en ús

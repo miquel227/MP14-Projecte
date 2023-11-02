@@ -1,11 +1,16 @@
-# Importem les llibreries necessàries de Shodan i de Python
+import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from shodan import Shodan
 import socket
+from bot import TelegramBot
 
-#Posem la nostra API Key obtinguda de Shodan
+
+# Inicialitza el client de Shodan amb la clau API
 api_key = 'EA2y81hle78OU28GmrhRJzbEzXZalgXd'
+api = Shodan(api_key)
 
-#Funció per obtenir el nom del servei
+# Defineix la funció per obtenir el nom del servei
 def get_service_name(port):
     try:
         service_name = socket.getservbyport(port)
@@ -13,61 +18,33 @@ def get_service_name(port):
     except OSError:
         return "Desconegut"
 
-# #Inicialitzem el client de Shodan amb la clau API
-api = Shodan(api_key)
-    
-# Solicita al usuari una direcció IP
-ip = input("Introueix una direcció IP: ")
+# Demana a l'usuari una direcció IP
+ip = input("Introdueix una direcció IP: ")
 
-# Obteneix la informació de la IP
+# Obté la informació de la IP
 ip_info = api.host(ip)
 
-# Mostra els noms de domini asociats a la IP
-print("Noms de domini asociats a la IP:")
-for domain in ip_info['domains']:
-    print(domain)
+# Defineix el nom del fitxer on es guardarà la sortida
+output_file = "shodan_results.txt"
 
-# Mostra els ports oberts trobats per Shodan y els seus noms de servei
-print("\nPorts trobats per Shodan:")
-for port_info in ip_info['data']:
-    port = port_info['port']
-    service_name = get_service_name(port)
-    print(f"Port: {port} - Nom del servei: {service_name}")
+# Obre el fitxer en mode d'escriptura i guarda la sortida
+with open(output_file, "w") as file:
+    # Escrivim els noms de domini associats a la IP
+    file.write("Noms de domini associats a la IP:\n")
+    for domain in ip_info['domains']:
+        file.write(domain + "\n")
 
-# Funció per buscar informació sobre un servei amb límit de resultats i espaiat
-import shodan
+    # Escrivim els ports oberts trobats per Shodan i els seus noms de servei
+    file.write("\nPorts trobats per Shodan:\n")
+    for port_info in ip_info['data']:
+        port = port_info['port']
+        service_name = get_service_name(port)
+        file.write(f"Port: {port} - Nom del servei: {service_name}\n")
 
-# Clau API de Shodan
-api_key = 'EA2y81hle78OU28GmrhRJzbEzXZalgXd'
-
-# Demana a l'usuari que introdueixi el nom del servei
-
-# Crida la funció de cerca de servei amb un límit de 10 resultats
-def search_service_info(api_key, service_name, max_results=10):
-    # Inicialitza el client de Shodan amb la clau API
-    api = shodan.Shodan(api_key)
-
-    try:
-        # Cerca informació sobre el servei especificat amb el límit de resultats
-        results = api.search(f"product:{service_name}", limit=max_results)
-
-        # Mostra els resultats
-        for result in results['matches']:
-            ip = result['ip_str']
-            port = result['port']
-            print(f"IP: {ip}, Port: {port}")
-
-            # Espaiat de 1 segon entre les sol·licituds per evitar restriccions
-            time.sleep(1)
-
-    except shodan.APIError as e:
-        print(f'Error: {e}')
-
-# Clau API de Shodan
-api_key = 'EA2y81hle78OU28GmrhRJzbEzXZalgXd'
-
-# Demana a l'usuari que introdueixi el nom del servei
-service_name = input("Introdueix el nom del servei: ")
-
-# Crida la funció de cerca de servei amb un límit de 10 resultats
-search_service_info(api_key, service_name, max_results=10)
+# Mostra els resultats per terminal
+with open(output_file, "r") as file:
+    print("Contingut del fitxer:")
+    print(file.read())
+mi_bot = TelegramBot()
+mi_bot.enviar_document(output_file)
+os.remove(output_file)
