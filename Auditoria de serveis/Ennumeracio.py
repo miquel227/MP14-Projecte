@@ -23,5 +23,3 @@ if os.path.exists(output_file):
     mi_bot = TelegramBot()
     mi_bot.enviar_document(output_file)
     os.remove(output_file)
-else:
-    print("No se ha generado el archivo de resultados.")
