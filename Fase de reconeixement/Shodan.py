@@ -25,7 +25,7 @@ ip = input("Introdueix una direcció IP: ")
 ip_info = api.host(ip)
 
 # Defineix el nom del fitxer on es guardarà la sortida
-output_file = "shodan_results.txt"
+output_file = "shodan_resultats.txt"
 
 # Obre el fitxer en mode d'escriptura i guarda la sortida
 with open(output_file, "w") as file:

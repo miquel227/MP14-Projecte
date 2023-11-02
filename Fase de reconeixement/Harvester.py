@@ -11,7 +11,7 @@ opcions = input("Introduïu les opcions de The Harvester (p. ex., -l 5 -b bing):
 comanda = f"python3.10 /home/alumne/theHarv/theHarvester/theHarvester.py -d {objectiu} {opcions}"
 
 # Nombre del archivo de salida
-output_file = "resultats_theharvester.txt"
+output_file = "Harvester_resultats.txt"
 
 # Intentamos ejecutar la comanda y guardar la salida en el archivo
 try:
