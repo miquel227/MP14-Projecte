@@ -103,7 +103,7 @@ def ssh_audit():
             mi_bot = TelegramBot()
             mi_bot.enviar_document(output_file)
             os.remove(output_file)
-        elif opcio == '3':
+        elif opcio == '6':
             print("Tornant al menú principal.")
             break
         else:
