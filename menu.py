@@ -25,7 +25,7 @@ def executar_harvester():
         print("L'arxiu Harvester.py no s'ha trobat.")
 def executar_osint():
     try:
-        subprocess.run(['python3', 'Fase de reconeixement/osint.py'])
+        subprocess.run(['python3', 'Fase de reconeixement/Osint.py'])
     except FileNotFoundError:
         print("L'arxiu osint.py no s'ha trobat.")
 def executar_shodan():
