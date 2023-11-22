@@ -2,8 +2,8 @@ import requests
 
 class TelegramBot:
     def __init__(self):
-        self.token = '5761203078:AAEmSQL6Ll1IZX4RHqO6K7eVS8QbYFNk2wg'
-        self.chat_id = '-1002084646469'
+        self.token = '6889677932:AAHlD9wD_ErIn7rD8nvlHGC7-7eKY8NzHEE'
+        self.chat_id = '-1002143597676'
     
     def enviar_mensaje(self, mensaje):
         response = requests.post(
