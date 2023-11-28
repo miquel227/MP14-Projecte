@@ -47,7 +47,7 @@ def escaneig_Nmap():
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió que vols escanejar: ")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
-            output_file = os.path.join(current_directory, "ServeisVersions.txt")
+            output_file = os.path.join(current_directory, "Serveis&Versions.txt")
             with open(output_file, "w") as output:
                 subprocess.run(["nmap", "-sV", target], stdout=output)
                 with open(output_file, "r") as file:
@@ -59,6 +59,7 @@ def escaneig_Nmap():
         elif opcio == '4':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió que vols escanejar: ")
+            print("Aquest procés pot trigar mes de 70 segons.")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
             output_file = os.path.join(current_directory, "Vulnerabilitats.txt")
             with open(output_file, "w") as output:

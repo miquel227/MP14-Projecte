@@ -43,7 +43,7 @@ def ssh_audit():
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
-            output_file = os.path.join(current_directory, "AuditoriaBàsica.txt")
+            output_file = os.path.join(current_directory, "IpSSH-Especifica.txt")
             with open(output_file, "w") as output:
                 subprocess.run(["ssh-audit", target], stdout=output)
             with open(output_file, "r") as file:
@@ -69,7 +69,7 @@ def ssh_audit():
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
-            output_file = os.path.join(current_directory, "AuditoriaPortDiferent.txt")
+            output_file = os.path.join(current_directory, "AuditoriaAmbDebug.txt")
             with open(output_file, "w") as output:
                 subprocess.run(["ssh-audit", "-d", target], stdout=output)
             with open(output_file, "r") as file:

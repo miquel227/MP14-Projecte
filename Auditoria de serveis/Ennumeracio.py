@@ -13,8 +13,8 @@ output_file = "resultats_enum4linux.txt"
 # Ruta completa de l'executable enum4linux
 #enum4linux_path = "/snap/bin/enum4linux"
 
-# Intentem executar enum4linux i guardar la sortida a l'arxiu
-print("Abans de l'execució d'enum4linux")
+print("Proces de l'execució d'enum4linux aquestes tres linies no son un error")
+print("Aquest proces tarda uns 30 segons")
 try:
     with open(output_file, "w") as output:
         subprocess.run(["/app/MP14-Projecte/enum4linux/enum4linux.pl", "-a", ip], stdout=output)
@@ -30,7 +30,7 @@ print("Abans de llegir el contingut de l'arxiu")
 with open(output_file, "r") as output:
     content = output.read()
     print("Contingut de l'arxiu:", content)
-print("Després de llegir el contingut de l'arxiu")
+print("Execcucio del enum4linux finalitzada")
 
 # Verifiquem si s'ha creat l'arxiu i l'enviem al bot de Telegram
 if os.path.exists(output_file):
