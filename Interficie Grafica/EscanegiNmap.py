@@ -5,7 +5,7 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from bot import TelegramBot
 import subprocess
-#import time
+import time
 
 class NmapScannerGUI:
     def __init__(self, root):
