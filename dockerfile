@@ -12,24 +12,27 @@ RUN apt-get update && apt-get install -y \
     polenum \
     git
 RUN apt-get update && apt-get install -y python3-pip ssh-audit nmap
+
+#Instalar shodan i requests
 RUN pip3 install requests
+RUN pip3 install shodan
 
 # Clona el repositori d'enum4linux des de GitHub
 RUN git clone https://github.com/CiscoCXSecurity/enum4linux.git /app/MP14-Projecte/enum4linux
 
-# Instal·la enum4linux
+# Instal·la enum4linux i crea els links per a que funcioni
 RUN ln -s /app/MP14-Projecte/enum4linux/enum4linux.pl /usr/local/bin/enum4linux
 RUN ln -s /app/MP14-Projecte/enum4linux/enum4linux.pl /usr/local/bin/e4l
 RUN ln -s /app/MP14-Projecte/enum4linux/enum4linux.pl /usr/local/bin/e4l.pl
 RUN ln -s /app/MP14-Projecte/enum4linux/enum4linux.pl /usr/local/bin/e4l-wrapper.sh
 RUN ls -l /usr/local/bin/enum4linux
-# Instal·la les dependències de Python especificades al fitxer requirements.txt dins de enum4linux
 
-# Copia els altres scripts i fitxers
+# Copia tot el que hi hagi al directori on esta el dockerfile a la carpeta /app que estara dins del container
+# Es important que la carpeta MP14-Projecte estigui dins del directori on esta el dockerfile, que es on esta tot el codi
 COPY . /app/
 
 # Defineix la carpeta de treball
 WORKDIR /app/MP14-Projecte
 
-# Comanda per executar el vostre script principal
+# Comanda per executar el menu que esta dins de la carpeta MP14-Projecte
 CMD ["python", "menu.py"]
