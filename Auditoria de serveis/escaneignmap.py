@@ -3,6 +3,7 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from bot import TelegramBot
 import subprocess
+import time
 
 def escaneig_Nmap():
     while True:
@@ -12,7 +13,7 @@ def escaneig_Nmap():
         print("2. Escaneig de ports oberts.")
         print("3. Llistat de serveis i versions.")
         print("4. Llistat de vulnerabilitats.")
-        print("5. Sortir")
+        print("5. Tornanr al menú principal.")
         
         opcio = input("Introdueix el número de l'opció que vols: ")
 
@@ -69,7 +70,10 @@ def escaneig_Nmap():
             mi_bot.enviar_document(output_file)
             os.remove(output_file)
         elif opcio == '5':
-            print("Tornant al menú principal.")
+            os.system('clear' if os.name == 'posix' else 'cls')
+            print("Tornant al menú principal....")
+            time.sleep(1.5)
+            os.system('clear' if os.name == 'posix' else 'cls')
             break
         else:
             print("Opció no vàlida. Si us plau, introdueix un número d'opció vàlid.")
