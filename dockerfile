@@ -1,5 +1,9 @@
 FROM python:3
 
+#Comandes terminal per borrar totes les imatges de docker: docker rmi -f $(docker images -q)
+#Comanda terminal per construir la imatge: sudo docker build -t imatge .
+#Comanda terminal per executar la imatge: sudo docker run -it imatge
+
 # Actualitza la llista de paquets i instal·la les dependències necessàries
 RUN apt-get update && apt-get install -y \
     samba \
@@ -20,7 +24,6 @@ RUN ln -s /app/MP14-Projecte/enum4linux/enum4linux.pl /usr/local/bin/e4l.pl
 RUN ln -s /app/MP14-Projecte/enum4linux/enum4linux.pl /usr/local/bin/e4l-wrapper.sh
 RUN ls -l /usr/local/bin/enum4linux
 # Instal·la les dependències de Python especificades al fitxer requirements.txt dins de enum4linux
-RUN pip install requests
 
 # Copia els altres scripts i fitxers
 COPY . /app/
