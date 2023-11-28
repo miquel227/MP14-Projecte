@@ -110,18 +110,4 @@ def ssh_audit():
             print("Opció no vàlida. Si us plau, introdueix un número d'opció vàlid.")
 
 if __name__ == "__main__":
-    while True:
-        os.system('clear' if os.name == 'posix' else 'cls')
-        print("Quina eina d'auditoria vols utilitzar?")
-        print("1. Auditoria SSH amb ssh-audit")
-        print("2. Sortir")
-        
-        opcio_principal = input("Introdueix el número de l'opció que vols: ")
-
-        if opcio_principal == '1':
-            ssh_audit()
-        elif opcio_principal == '2':
-            print("Adéu!")
-            break
-        else:
-            print("Opció no vàlida. Si us plau, introdueix un número d'opció vàlid.")
+    ssh_audit()
