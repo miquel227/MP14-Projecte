@@ -5,6 +5,7 @@ from bot import TelegramBot
 import subprocess
 import socket
 import os
+import time
 
 def ssh_audit_all_ports(target):
     used_ports = []  # Llista per emmagatzemar els ports en ús
@@ -104,7 +105,10 @@ def ssh_audit():
             mi_bot.enviar_document(output_file)
             os.remove(output_file)
         elif opcio == '6':
-            print("Tornant al menú principal.")
+            os.system('clear' if os.name == 'posix' else 'cls')
+            print("Tornant al menú principal....")
+            time.sleep(1.5)
+            os.system('clear' if os.name == 'posix' else 'cls')
             break
         else:
             print("Opció no vàlida. Si us plau, introdueix un número d'opció vàlid.")
