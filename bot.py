@@ -23,9 +23,9 @@ class TelegramBot:
                 files={'document': doc_file}
             )
             if response.status_code == 200:
-                print('El document s\'ha enviat correctament.')
+                print('El document amb els resultats s\'ha enviat correctament.')
             else:
-                print('El document no s\'ha pogut enviar.')
+                print('El document amb els resultats no s\'ha pogut enviar.')
 
     def mensaje(self, text):
         self.enviar_mensaje(text)
