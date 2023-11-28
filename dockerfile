@@ -1,8 +1,26 @@
 FROM python:3
 
-# Actualitza la llista de paquets i instal·la el mòdul "requests"
+# Actualitza la llista de paquets i instal·la les dependències necessàries
+RUN apt-get update && apt-get install -y \
+    samba \
+    smbclient \
+    perl \
+    polenum \
+    git
 RUN apt-get update && apt-get install -y python3-pip ssh-audit nmap
 RUN pip3 install requests
+
+# Clona el repositori d'enum4linux des de GitHub
+RUN git clone https://github.com/CiscoCXSecurity/enum4linux.git /app/MP14-Projecte/enum4linux
+
+# Instal·la enum4linux
+RUN ln -s /app/MP14-Projecte/enum4linux/enum4linux.pl /usr/local/bin/enum4linux
+RUN ln -s /app/MP14-Projecte/enum4linux/enum4linux.pl /usr/local/bin/e4l
+RUN ln -s /app/MP14-Projecte/enum4linux/enum4linux.pl /usr/local/bin/e4l.pl
+RUN ln -s /app/MP14-Projecte/enum4linux/enum4linux.pl /usr/local/bin/e4l-wrapper.sh
+RUN ls -l /usr/local/bin/enum4linux
+# Instal·la les dependències de Python especificades al fitxer requirements.txt dins de enum4linux
+RUN pip install requests
 
 # Copia els altres scripts i fitxers
 COPY . /app/
