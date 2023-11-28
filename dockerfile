@@ -31,7 +31,7 @@ RUN ls -l /usr/local/bin/enum4linux
 # Es important que la carpeta MP14-Projecte estigui dins del directori on esta el dockerfile, que es on esta tot el codi
 COPY . /app/
 
-# Defineix la carpeta de treball
+# Defineix la carpeta de treball dins del contenedor de docker
 WORKDIR /app/MP14-Projecte
 
 # Comanda per executar el menu que esta dins de la carpeta MP14-Projecte
