@@ -8,7 +8,7 @@ objectiu = input("Introduïu l'objectiu (domini, correu electrònic, etc.): ")
 opcions = input("Introduïu les opcions de The Harvester (p. ex., -l 5 -b bing): ")
 
 # Utilizamos la ruta completa al script theHarvester.py
-comanda = f"python3.10 /home/alumne/theHarv/theHarvester/theHarvester.py -d {objectiu} {opcions}"
+comanda = f"python3 /app/MP14-Projecte/theHarvester/theHarvester.py -d {objectiu} {opcions}"
 
 # Nombre del archivo de salida
 output_file = "Harvester_resultats.txt"
