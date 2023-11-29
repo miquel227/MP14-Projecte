@@ -33,6 +33,7 @@ def executar_shodan():
         subprocess.run(['python3', 'Fase de reconeixement/Shodan.py'])
     except FileNotFoundError:
         print("L'arxiu Shodan.py no s'ha trobat.")
+#vull un sub menu per a interficie grafica on existira el mateix
 
 def menu():
     while True:
@@ -43,7 +44,8 @@ def menu():
         print("4. Executar Harvester")
         print("5. Executar OSINT")
         print("6. Executar Shodan")
-        print("7. Sortir")
+        print("7  Interficie gràfica(opcional)")
+        print("8. Sortir")
         opcio = input("Selecciona una opció: ")
 
         if opcio == "1":
@@ -65,6 +67,12 @@ def menu():
             os.system('clear' if os.name == 'posix' else 'cls')
             executar_shodan()
         elif opcio == "7":
+            os.system('clear' if os.name == 'posix' else 'cls')
+            try:
+                subprocess.run(['python3', 'Interficie Grafica/Interficie.py'])
+            except FileNotFoundError:
+                print("L'arxiu Interficie.py no s'ha trobat.")
+        elif opcio == "8":
             os.system('clear' if os.name == 'posix' else 'cls')
             print("Sortint del programa.")
             break
