@@ -1,56 +1,31 @@
-# Rex et utque clarum non gener non
+#**Títol del Projecte: Auditoria MOF - Protectors de la Ciberseguretat**
 
-## Per et bidentes tenuit
+Benvinguts a Auditoria MOF, un projecte impulsat per tres apassionats de la ciberseguretat: Miquel Dieguez, Oscar Mateo i Felip Curto. Aquest treball de classe reflecteix la nostra dedicació i entusiasme per explorar i millorar la seguretat informàtica en entorns empresarials.
 
-Lorem markdownum caecaeque rostro eurytus creatus, natus agendum domos; tempore.
-Artes [et](http://inspirantque.net/orbempone) quoque et virgam, quod animoque
-quisquis partibus. Iubar monitae. Surgentibus oculos proprias contra sed equis
-profuit. Et totum dicentem doleret: cum hos notamque et cultu pectora ora Niobe
-quarum postquam, alto bello.
+-------------------------------------------------------------
 
-- Finem omnique annos latos
-- Orbis plantis
-- Pinu linguisque amans et non Parrhasis nondum
+##**Qui Som:**
 
-## Tamen saturatos leporem
+Som un petit grup d'aficionats a la ciberseguretat que compartim una visió comuna: protegir les empreses mitjançant eines d'auditoria avançades. La nostra combinació de coneixements en informàtica, xarxes i seguretat informàtica ens ha conduït a desenvolupar Auditoria MOF, un conjunt de programes dissenyats per identificar i abordar potencials amenaces cibernètiques.
 
-Pandione deripit cycnorum: in facies sceptri potens! Non nutricis ibi figit
-accepisse arbitrio fuit tanti, mala acris; manibus.
+##**La Passió per la Ciberseguretat:**
 
-    if (recursionCmosSeo + matrix) {
-        barcraft_display -= alignment;
-        portSharewareBus(2 + hashtagPointTooltip, null);
-    } else {
-        podcast_xslt.model_threading = nameScroll * 4 / prom_vector(dragServer,
-                46);
-    }
-    primaryDithering.backup_compression += codecVlbThermistor +
-            ircThermistorLog;
-    if (skyscraper_smb(gnu)) {
-        function /= cloud_clob.peopleware_wireless_nvram.pipeline_netbios(
-                camelcaseInsertion, software_num(5, record_bitrate));
-    }
-    if (sound) {
-        voip_pitch.system = 3;
-    }
+Aquest projecte va més enllà d'un simple treball de classe; representa la nostra dedicació i amor per la ciberseguretat. Com a aficionats en aquest camp en ràpida evolució, estem dedicats a mantenir-nos actualitzats amb les últimes tendències i tècniques. La nostra passió és donar forma a un futur on les empreses puguin prosperar sense por de ciberatacs.
 
-## Dea turbatus voces
+##**Propòsit i Missió:**
 
-Non rebus reperta facinus haud resupinus medios decebat maiestatemque, iam sed
-Tyndaridae, Indigetem cum. Ipse pectus, deae
-[textum](http://www.est-lapsa.com/), Rhamnusidis *animalia*, ipsi durum, petiit
-temptatos magnis? Regionibus prosunt sed tum sola felix, quadripedes, Aetola
-tamquam. Et silvas coniuge clamore condas
-[imitantes](http://clade-maris.net/minima) capellae.
+Amb Auditoria MOF, aspirem a oferir a les empreses una eina efectiva per avaluar la seva seguretat informàtica. Creiem que cada empresa, independentment de la seva mida, mereix una defensa robusta contra amenaces cibernètiques. Amb aquesta missió, treballem per proporcionar un enfocament holístic per a la detecció i la mitigació de riscos.
 
-## Festinus trepidaeque de per maestus tota nullamque
+##**Compromís amb la Comunitat Empresarial:**
 
-[Est](http://pennis.net/arcadiaeaequor.aspx) ait umero eris male conripimus
-conscia scelerata mollierat Iovis, vidisse socium **uni quicquam** domui si.
-Postquam Lucinam dieque. *Mihi et sonus* exhortor perenni Lycaoniae, mittere
-habes per sonuere securaque donec, suspicere.
+Entenem que la ciberseguretat no és només una tasca, sinó una responsabilitat compartida. Amb això en ment, volem contribuir positivament a la comunitat empresarial, proporcionant una eina que pugui ajudar a garantir la integritat i la confidencialitat de les dades empresarials.
 
-Ergo indigenae de similis via solebat tacitus, vale petent, quod. Potitus malis
-Phaethon suo servor pariter contraque ut fassurae quod, est sequantur, viso.
-Hausit quod macies nudum tanti laetos. Aliis ponit adicit potest, expendite
-miles corripuit sitim. Tamen esse difficilem arva haut?
+Amb el nostre treball, aspirem a inspirar altres a unir-se a la causa de la ciberseguretat i a contribuir al manteniment d'un entorn empresarial digital segur i fiable.
+
+##**Agraïments:**
+
+Volem expressar la nostra gratitud per l'oportunitat d'explorar i créixer en aquest àmbit emocionant. Amb Auditoria MOF, pretenem deixar una petita empremta en el món de la ciberseguretat, motivant la pròxima generació d'experts en seguretat informàtica.
+
+-------------------------------------------------------------
+
+Junts, construïm un futur més segur. Auditoria MOF - Protectors de la Ciberseguretat.
