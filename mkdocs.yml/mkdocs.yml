@@ -1,8 +1,8 @@
 site_name: MOF_SL
 site_url: http://192.168.203.116:8090
 nav:
-  - Home: index.md
-  - About: about.md
+  - Inici: index.md
+  - Sobre nosaltres: about.md
   - Guia Usuari: guia_usuari.md
 theme:
   name: material
