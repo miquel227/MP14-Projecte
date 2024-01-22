@@ -1,0 +1,31 @@
+<!-- menu.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Menú</title>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <h2>Escolleix quin programa vols executar:</h2>
+            <form action="{{ url_for('execute') }}" method="post">
+                <label for="option">Opció:</label>
+                <select name="option" id="option">
+                    <option value="1">Executar Auditoria SSH</option>
+                    <option value="2">Executar Ennumeració</option>
+                    <option value="3">Executar Escaneig Nmap</option>
+                    <option value="4">Executar Harvester</option>
+                    <option value="5">Executar OSINT</option>
+                    <option value="6">Executar Shodan</option>
+                    <option value="7">Interficie gràfica(opcional)</option>
+                </select>
+                <br>
+                <input type="submit" value="Executar">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

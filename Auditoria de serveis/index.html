@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Menú</title>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <h2>Escolleix quin programa vols executar:</h2>
+            
+            <!-- Formulari per a l'Escaneig NMAP -->
+            <form method="post" action="{{ url_for('execute') }}">
+                <input type="hidden" name="option" value="1">
+                <label for="subnet">Subnet:</label>
+                <input type="text" id="subnet" name="target" required>
+                <button type="submit">Escaneig NMAP</button>
+            </form>
+
+            <!-- Formulari per a l'Auditoria SSH -->
+            <form method="post" action="{{ url_for('execute') }}">
+                <input type="hidden" name="option" value="2">
+                <label for="target">Target:</label>
+                <input type="text" id="target" name="target" required>
+                <button type="submit">Auditoria SSH</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

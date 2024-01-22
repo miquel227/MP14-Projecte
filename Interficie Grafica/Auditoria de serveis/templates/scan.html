@@ -1,0 +1,10 @@
+<!-- scan.html -->
+<form action="{{ url_for('process_scan') }}" method="post">
+    <label for="ip">Introdueix la IP:</label>
+    <input type="text" name="ip" required>
+    <br>
+    <label for="options">Introdueix les opcions:</label>
+    <input type="text" name="options" required>
+    <br>
+    <input type="submit" value="Escanejar">
+</form>
