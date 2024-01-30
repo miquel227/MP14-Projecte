@@ -52,6 +52,7 @@ def ssh_audit():
             mi_bot = TelegramBot()
             mi_bot.enviar_document(output_file)
             os.remove(output_file)
+            
         elif opcio == '2':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
@@ -65,6 +66,7 @@ def ssh_audit():
             mi_bot = TelegramBot()
             mi_bot.enviar_document(output_file)
             os.remove(output_file)
+
         elif opcio == '3':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
@@ -78,6 +80,7 @@ def ssh_audit():
             mi_bot = TelegramBot()
             mi_bot.enviar_document(output_file)
             os.remove(output_file)
+
         elif opcio == '4':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
@@ -91,6 +94,7 @@ def ssh_audit():
             mi_bot = TelegramBot()
             mi_bot.enviar_document(output_file)
             os.remove(output_file)
+
         elif opcio == '5':
             os.system('clear' if os.name == 'posix' else 'cls')
             target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
@@ -104,6 +108,7 @@ def ssh_audit():
             mi_bot = TelegramBot()
             mi_bot.enviar_document(output_file)
             os.remove(output_file)
+
         elif opcio == '6':
             os.system('clear' if os.name == 'posix' else 'cls')
             print("Tornant al menú principal....")
