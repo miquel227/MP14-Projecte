@@ -1,6 +1,9 @@
 # Usa una imatge base de Python 3
 FROM python:3
 
+#Com crear la imatge a partir del Dockerfile: docker build -t mp14-projecte .   
+#Com executar la imatge: docker run -it mp14-projecte
+
 # Actualitza la llista de paquets i instal·la les dependències necessàries
 RUN apt-get update && apt-get install -y \
     samba \

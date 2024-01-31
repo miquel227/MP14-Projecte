@@ -8,3 +8,9 @@ theme:
   name: material
   locale: ca
   language: ca
+markdown_extensions:
+  - pymdownx.highlight:
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.js
+  - https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js
