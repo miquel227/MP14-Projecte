@@ -10,7 +10,7 @@ theme:
   language: ca
 markdown_extensions:
   - pymdownx.highlight:
-
+      use_pygments: true
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.js
   - https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js

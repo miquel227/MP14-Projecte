@@ -1,34 +1,31 @@
 # Guia Usuari
 
-###Requeriments per poder utilitzar el nostre programari.
+###**Requeriments per poder utilitzar el nostre programari.**
 
 + Qualsevol Sistema Operatiu de Linux
 
 + <p>Docker Compose instal·lat (mira <a href="https://docs.docker.com/engine/install/" title="Title">Instalar Docker Compose)</a></p>
 
-+ Potser també una tasa de cafe o de te :)
++ Potser també una tasa de café o de té :)
 
+###**Primer Pas: Descarregar l'última versió del nostre codi**
 
-
-```python
-
-   def ssh_audit_all_ports(target):
-   used_ports = []  # Llista per emmagatzemar els ports en ús
-
-   # Escanejar tots els ports SSH en el rang 1-65535
-   for port in range(1, 65536):
-       # Verificar si el port està en ús
-       sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-       sock.settimeout(1)  # Temps d'espera per a la connexió (1 segon)
-       resultat = sock.connect_ex((target, port))
-       sock.close()
-
-       if resultat == 0:
-           used_ports.append(port)
-
-   if not used_ports:
-       return "No s'ha trobat cap servidor SSH en cap port."
-    
-   return "\n".join([f"Port {port} és utilitzat per SSH." for port in used_ports])
 ```
+docker pull miqueldieguez123/mp14-projecte
+docker run -it miqueldieguez123/mp14-projecte
+```
+
+-------------------------------------------------------------------------
+###**Segon Pas: Començem amb la execució del programa**
+Per començar, al executar el nostre programari d'auditoria podem veure que ens surten una sèrie d'opcions:
+
+![Descripción de la imagen](/Imatges/1.jpeg)
+
+Com veiem, aquestes són les nostres
+
+![Descripción de la imagen](/Imatges/2.jpeg)
+
+![Descripción de la imagen](/Imatges/3.png)
+
+![Descripción de la imagen](/Imatges/4.png)
 
