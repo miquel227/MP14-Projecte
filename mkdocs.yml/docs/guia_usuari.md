@@ -36,7 +36,7 @@ La sortida següent és la que us sortirà per a cada opció del primer submenú
 
 ![Descripción de la imagen](/Imatges/4.png)
 
-####**Opció 1 (Escanejar un servidor SSH específic):**sa
+####**Opció 1 (Escanejar un servidor SSH específic):**
 
 Aquesta opció fà que l'eina realitzi un escaneig de la IP objectiu amb aquesta direcció (normalment s'utilitza per a servidors SSH) i presenta un informe detallat sobre la configuració de seguretat del servidor.
 
