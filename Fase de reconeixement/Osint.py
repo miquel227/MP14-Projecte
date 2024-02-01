@@ -5,7 +5,7 @@ from bot import TelegramBot
 import os
 import requests
 
-# Solicitar la direcció IP a l'usuari
+# Demanar a l'usuari la IP que vol geolocalitzar
 ip_address = input("Introdueix la IP que vols geolocalitzar: ")
 
 # URL de la API de ipinfo.io

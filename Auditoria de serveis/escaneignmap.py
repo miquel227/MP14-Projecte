@@ -32,7 +32,7 @@ def escaneig_Nmap():
             os.remove(output_file)
         elif opcio == '2':
             os.system('clear' if os.name == 'posix' else 'cls')
-            target = input("Introdueix la IP o nom de l'amfitrió que vols escanejar: ")
+            target = input("Introdueix la IP de l'objectiu que vols escanejar: ")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
             output_file = os.path.join(current_directory, "PortsOberts.txt")
             with open(output_file, "w") as output:
@@ -45,7 +45,7 @@ def escaneig_Nmap():
             os.remove(output_file)
         elif opcio == '3':
             os.system('clear' if os.name == 'posix' else 'cls')
-            target = input("Introdueix la IP o nom de l'amfitrió que vols escanejar: ")
+            target = input("Introdueix la IP de l'objectiu que vols escanejar: ")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
             output_file = os.path.join(current_directory, "Serveis&Versions.txt")
             with open(output_file, "w") as output:
@@ -58,7 +58,7 @@ def escaneig_Nmap():
             os.remove(output_file)
         elif opcio == '4':
             os.system('clear' if os.name == 'posix' else 'cls')
-            target = input("Introdueix la IP o nom de l'amfitrió que vols escanejar: ")
+            target = input("Introdueix la IP de l'objectiu que vols escanejar: ")
             print("Aquest procés pot trigar mes de 70 segons.")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
             output_file = os.path.join(current_directory, "Vulnerabilitats.txt")

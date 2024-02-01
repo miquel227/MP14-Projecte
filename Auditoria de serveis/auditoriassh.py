@@ -41,7 +41,7 @@ def ssh_audit():
 
         if opcio == '1':
             os.system('clear' if os.name == 'posix' else 'cls')
-            target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
+            target = input("Introdueix la IP de l'objectiu que vols auditar: ")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
             output_file = os.path.join(current_directory, "IpSSH-Especifica.txt")
             with open(output_file, "w") as output:
@@ -55,7 +55,7 @@ def ssh_audit():
             
         elif opcio == '2':
             os.system('clear' if os.name == 'posix' else 'cls')
-            target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
+            target = input("Introdueix la IP de l'objectiu que vols auditar:  ")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
             output_file = os.path.join(current_directory, "AuditoriaForçantIPv4.txt")
             with open(output_file, "w") as output:
@@ -69,7 +69,7 @@ def ssh_audit():
 
         elif opcio == '3':
             os.system('clear' if os.name == 'posix' else 'cls')
-            target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
+            target = input("Introdueix la IP de l'objectiu que vols auditar:  ")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
             output_file = os.path.join(current_directory, "AuditoriaAmbDebug.txt")
             with open(output_file, "w") as output:
@@ -83,7 +83,7 @@ def ssh_audit():
 
         elif opcio == '4':
             os.system('clear' if os.name == 'posix' else 'cls')
-            target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
+            target = input("Introdueix la IP de l'objectiu que vols auditar:  ")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
             output_file = os.path.join(current_directory, "AuditoriaJSON.txt")
             with open(output_file, "w") as output:
@@ -97,7 +97,7 @@ def ssh_audit():
 
         elif opcio == '5':
             os.system('clear' if os.name == 'posix' else 'cls')
-            target = input("Introdueix la IP o nom de l'amfitrió SSH que vols auditar: ")
+            target = input("Introdueix la IP de l'objectiu que vols auditar:  ")
             current_directory = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
             output_file = os.path.join(current_directory, "PortsSSH_Oberts.txt")
             output_text = ssh_audit_all_ports(target)  
