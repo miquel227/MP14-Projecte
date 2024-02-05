@@ -32,7 +32,7 @@ En aquest submenú tindrem una varietat d'opcions d'escaneig amb l'eina ssh-audi
 
 ![Descripción de la imagen](/Imatges/3.png)
 
-La sortida següent és la que us sortirà per a cada opció del primer submenú.
+La sortida següent és la que us sortirà per a **CADA** opció del primer submenú.
 
 ![Descripción de la imagen](/Imatges/4.png)
 
@@ -42,27 +42,10 @@ Aquesta opció fà que l'eina realitzi un escaneig de la IP objectiu amb aquesta
 
 Aquest informe pot incloure informació sobre les versions del protocol SSH admeses, algoritmes de xifrat utilitzats, configuracions de claus i altres configuracions de seguretat relacionades amb SSH. La sortida proporcionada per ssh-audit t'ajuda a avaluar la robustesa de la configuració de seguretat de la IP objectiu i a prendre mesures per reforçar-la si és necessari.
 
-####**Opció 2 (Escaneig forçant IPv4):**
+Exemple d'execució:
+![Descripción de la imagen](/Imatges/5.png)
 
-Aquesta opció et permet auditar la configuració de seguretat del servidor SSH amb una especificació clara de l'ús d'IPv4. El programa sol·licitarà que introdueixis la direcció IP de l'objectiu que desitges auditar.
-
-Durant l'escaneig, ssh-audit analitzarà les versions del protocol SSH admeses, els algoritmes de xifrat utilitzats, les configuracions de claus i altres paràmetres de seguretat associats amb SSH. El resultat d'aquesta auditoria serà presentat en un informe detallat, proporcionant-te informació valuosa per avaluar la robustesa de la configuració de seguretat del servidor SSH.
-
-Recordeu que aquesta opció pot ser útil si desitges assegurar-te que només s'utilitzi IPv4 durant l'escaneig de seguretat. Després de completar l'auditoria, els resultats es mostraran a la terminal i s'enviaran a través de Telegram per a una revisió i accions addicionals.
-
-####**Opció 3 (Escaneig amb depuració (debug)):**
-
-Aquesta opció proporciona funcionalitats de depuració addicionals durant l'escaneig del servidor SSH. Quan seleccionis aquesta opció, el programa realitzarà un escaneig del servidor objectiu amb ssh-audit incorporant informació detallada de depuració.
-
-Durant aquest escaneig, es recopilaran detalls extensos sobre el procés d'auditoria, com ara informació específica sobre cada pas realitzat per l'eina ssh-audit. Aquesta sortida de depuració pot ser útil per a diagnosticar problemes específics o entendre més a fons els processos interns de l'auditoria.
-
-Com amb les altres opcions, proporcionaràs la direcció IP de l'objectiu i, després de l'escaneig, els resultats es mostraran a la terminal i s'enviaran a través de Telegram per a revisió i accions addicionals.
-
-Aquesta opció pot ser especialment útil per als usuaris avançats que necessitin una comprensió més profunda del funcionament intern de ssh-audit i vulguin analitzar les dades de depuració per a fins d'optimització o solució de problemes.
-
-####**Opció 4 ():**
-
-##Text:
+Aquesta part del codi és la que fà referència a l'opció mencionada anteriorment:
 
 ```
     if opcio == '1':
@@ -80,7 +63,15 @@ Aquesta opció pot ser especialment útil per als usuaris avançats que necessit
             os.remove(output_file)
 ```
 
-##Text:
+####**Opció 2 (Escaneig forçant IPv4):**
+
+Aquesta opció et permet auditar la configuració de seguretat del servidor SSH amb una especificació clara de l'ús d'IPv4. El programa sol·licitarà que introdueixis la direcció IP de l'objectiu que desitges auditar.
+
+Durant l'escaneig, ssh-audit analitzarà les versions del protocol SSH admeses, els algoritmes de xifrat utilitzats, les configuracions de claus i altres paràmetres de seguretat associats amb SSH. El resultat d'aquesta auditoria serà presentat en un informe detallat, proporcionant-te informació valuosa per avaluar la robustesa de la configuració de seguretat del servidor SSH.
+
+Recordeu que aquesta opció pot ser útil si desitges assegurar-te que només s'utilitzi IPv4 durant l'escaneig de seguretat. Després de completar l'auditoria, els resultats es mostraran a la terminal i s'enviaran a través de Telegram per a una revisió i accions addicionals.
+
+Aquesta part del codi és la que fà referència a l'opció mencionada anteriorment:
 
 ```
     elif opcio == '2':
@@ -98,7 +89,18 @@ Aquesta opció pot ser especialment útil per als usuaris avançats que necessit
             os.remove(output_file)
 ```
 
-##Text:
+
+####**Opció 3 (Escaneig amb depuració (debug)):**
+
+Aquesta opció proporciona funcionalitats de depuració addicionals durant l'escaneig del servidor SSH. Quan seleccionis aquesta opció, el programa realitzarà un escaneig del servidor objectiu amb ssh-audit incorporant informació detallada de depuració.
+
+Durant aquest escaneig, es recopilaran detalls extensos sobre el procés d'auditoria, com ara informació específica sobre cada pas realitzat per l'eina ssh-audit. Aquesta sortida de depuració pot ser útil per a diagnosticar problemes específics o entendre més a fons els processos interns de l'auditoria.
+
+Com amb les altres opcions, proporcionaràs la direcció IP de l'objectiu i, després de l'escaneig, els resultats es mostraran a la terminal i s'enviaran a través de Telegram per a revisió i accions addicionals.
+
+Aquesta opció pot ser especialment útil per als usuaris avançats que necessitin una comprensió més profunda del funcionament intern de ssh-audit i vulguin analitzar les dades de depuració per a fins d'optimització o solució de problemes.
+
+Aquesta part del codi és la que fà referència a l'opció mencionada anteriorment:
 
 ```
     elif opcio == '3':
@@ -115,8 +117,18 @@ Aquesta opció pot ser especialment útil per als usuaris avançats que necessit
             mi_bot.enviar_document(output_file)
             os.remove(output_file)
 ```
-##Text:
 
+####**Opció 4 (Mostrar la sortida en format JSON):**
+
+Aquesta opció permet visualitzar la sortida de l'escaneig del servidor SSH en format JSON. En seleccionar aquesta opció, el programa realitzarà l'escaneig de la direcció IP de l'objectiu utilitzant ssh-audit i presentarà els resultats en un format estructurat JSON.
+
+El format JSON facilita la interpretació programàtica dels resultats de l'auditoria, oferint una representació clara i ordenada de la informació. Això pot ser especialment útil si desitges processar els resultats amb altres eines o integrar-los en altres sistemes.
+
+Com amb les opcions anteriors, introduiràs la direcció IP de l'objectiu i, després de l'escaneig, els resultats es mostraran a la terminal. A més, es proporcionarà la opció de enviar els resultats a través de Telegram per a una revisió i accions addicionals.
+
+Aquesta opció és indicada per aquells que prefereixen una representació estructurada i programàtica dels resultats de l'auditoria, potser amb la intenció de processar-los posteriorment mitjançant altres eines o scripts.
+
+Aquesta part del codi és la que fà referència a l'opció mencionada anteriorment:
 
 ```
     elif opcio == '4':
@@ -133,8 +145,17 @@ Aquesta opció pot ser especialment útil per als usuaris avançats que necessit
             mi_bot.enviar_document(output_file)
             os.remove(output_file)
 ```
+####**Opció 5 (Escanejar tots els ports SSH oberts):**
 
-##Text:
+Aquesta opció permet realitzar un escaneig exhaustiu de tots els ports SSH oberts al servidor. Quan seleccionis aquesta opció, el programa utilitzarà l'eina ssh-audit per escanejar tots els ports de la direcció IP de l'objectiu amb la finalitat d'identificar quins d'ells estan configurats com a ports SSH.
+
+Durant l'escaneig, ssh-audit analitzarà la configuració de seguretat dels ports SSH oberts, presentant un informe detallat que inclourà informació sobre les versions del protocol SSH admeses, els algoritmes de xifrat utilitzats, les configuracions de claus i altres paràmetres de seguretat associats amb SSH en cadascun dels ports oberts.
+
+Aquesta opció és especialment útil quan no es coneix prèviament quin port SSH està en ús o si el servidor utilitza diversos ports. Després de l'escaneig, els resultats es mostraran a la terminal i tindràs l'opció de enviar-los a través de Telegram per a una revisió i accions addicionals.
+
+Seleccionar aquesta opció t'ajudarà a assegurar-te que tots els ports SSH oberts estan configurats adequadament en termes de seguretat.
+
+Aquesta part del codi és la que fà referència a l'opció mencionada anteriorment:
 
 ```
     elif opcio == '5':
@@ -152,7 +173,7 @@ Aquesta opció pot ser especialment útil per als usuaris avançats que necessit
             os.remove(output_file)
 ```
 
-##Text de la opcio 5 una mica mes complexa que les altres ja que te una funcio:::
+Aquesta és la funció que escaneja els ports d'una adreça IP específica. Ha sigut usada per aquesta opció.
 
 ```
     def ssh_audit_all_ports(target):
@@ -175,26 +196,40 @@ Aquesta opció pot ser especialment útil per als usuaris avançats que necessit
     return "\n".join([f"Port {port} és utilitzat per SSH." for port in used_ports])
 ```
 
-##Captura exemple de la primera execucció: 
-![Descripción de la imagen](/Imatges/5.png)
-
-
-
-##Text:
+Finalment tenim l'opció 6 que permet sortir al menú principal.
 
 ![Descripción de la imagen](/Imatges/7.png)
 
-##Amb el numero 6 torner al menu principal:
-
 ![Descripción de la imagen](/Imatges/6.png)
+
+```
+elif opcio == '6':
+            os.system('clear' if os.name == 'posix' else 'cls')
+            print("Tornant al menú principal....")
+            time.sleep(1.5)
+            os.system('clear' if os.name == 'posix' else 'cls')
+            break
+        else:
+            print("Opció no vàlida. Si us plau, introdueix un número d'opció vàlid.")
+```
+
+Cal comentar que cada vegada que executem una opció de les anomenades anteriorment, tornarem al submenú (menys la de tornar al menú principal).
 
 **--------------------------------------------------------------------------------------------------------------**
 
-##Text:
+En segon lloc tenim l'opció d'enumeració amb l'eina "enumforlinux"
+
+Però, abans de veure el resultat de l'execució del codi i el codi adjunt, explicarem una mica qué es i per a que ha estat  dissenyada Enum4linux és una eina de seguretat informàtica dissenyada per a la enumeració i anàlisi de sistemes basats en el protocol SMB/CIFS. Aquesta utilitat està especialment destinada a la detecció d'informació rellevant en xarxes de Microsoft Windows. Enum4linux es caracteritza per la seva capacitat per a explorar i recopilar informació d'una manera eficient, ajudant els professionals de la seguretat a identificar vulnerabilitats i realitzar auditories de seguretat.
+
+Per inicialitzar aquesta opició escriurem únicament el número 2.
 
 ![Descripción de la imagen](/Imatges/8.png)
 
-##Text:
+Seguidament ficarem la IP de l'objectiu que li vulguèssim extreure les seves vulnerabilitats. 
+
+![Descripción de la imagen](/Imatges/22.png)
+
+Aquesta part del codi és la que fà referència a l'opció mencionada anteriorment:
 
 ```
     ip = input("Introdueix la IP que vols escanejar amb enum4linux: ")
@@ -228,15 +263,17 @@ if os.path.exists(output_file):
     os.remove(output_file)
 ```
 
-##Un cop acabe l'execcució del programa en portara automaticament al menú principal
+Finalment un cop acabi l'execució del programa torna al menú principal.
 
 **--------------------------------------------------------------------------------------------------------------**
 
-##Text:
+La següent opció que hi ha per executar es l'escaneig Nmap.
+
+Per executar aquesta opció només escribim el número que li pertoca, en aquest cas el número 3.
 
 ![Descripción de la imagen](/Imatges/10.png)
 
-##Text:
+Llavors ens sortirà un submenú el cual ens 
 
 
 ![Descripción de la imagen](/Imatges/11.png)
