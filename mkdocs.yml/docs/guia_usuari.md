@@ -273,15 +273,16 @@ Per executar aquesta opció només escribim el número que li pertoca, en aquest
 
 ![Descripción de la imagen](/Imatges/10.png)
 
-Llavors ens sortirà un submenú el cual ens 
+Llavors ens sortirà un submenú el cual ens mostrarà totes les funcionalitats que té aquesta opció d'escaneig Nmap.
 
 
 ![Descripción de la imagen](/Imatges/11.png)
 
-
-##Text:
+A la primera opció d'aquest submenú ens dirà d'introduïr una subxarxa per escanejar.
 
 ![Descripción de la imagen](/Imatges/12.png)
+
+Aquesta part del codi és la que fà referència a l'opció mencionada anteriorment:
 
 ```
     if opcio == '1':
@@ -298,14 +299,14 @@ Llavors ens sortirà un submenú el cual ens
             mi_bot.enviar_document(output_file)
             os.remove(output_file)
 ```
-
-
-
-##Aquesta opcio es reclipa el mateix missatge a les demes opcion a la 2, 3 i 4
+Per altra banda, a les altres opcions haurem d'introduïr una IP(la de l'objectiu)
 
 ![Descripción de la imagen](/Imatges/13.png)
 
-##Text:
+Les següents parts de codi fan referència a les altres opcions que falten.
+
+**Opció 2:**
+
 ```
     elif opcio == '2':
         os.system('clear' if os.name == 'posix' else 'cls')
