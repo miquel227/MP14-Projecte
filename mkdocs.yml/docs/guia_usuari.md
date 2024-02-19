@@ -1,6 +1,6 @@
 # Guia Usuari
 
-###**Requeriments per poder utilitzar el nostre programari.**
+##**Requeriments per poder utilitzar el nostre programari.**
 
 + Qualsevol Sistema Operatiu de Linux
 
@@ -8,21 +8,22 @@
 
 + Potser també una tasa de café o de té :)
 
-###**Primer Pas: Descarregar l'última versió del nostre codi**
+##**Primer Pas: Descarregar l'última versió del nostre codi**
 
 ```
 docker pull miqueldieguez123/mp14-projecte
 docker run -it miqueldieguez123/mp14-projecte
 ```
 
--------------------------------------------------------------------------
-###**Segon Pas: Començem amb la execució del programa**
+##**Segon Pas: Començem amb la execució del programa**
 Per començar, al executar el nostre programari d'auditoria podem veure que ens surten una sèrie d'opcions:
 
 Com veiem, aquestes són les opcions d'auditoria del programa.
 En aquesta guia explicarem per ordre de números les següents opcions que hi han. 
 
 ![Descripción de la imagen](/Imatges/1.jpeg)
+
+### **1.Auditoria SSH**
 
 Seleccionant l'opció 1 "Executar Auditoria SSH" entrarem a un submenú.
 
@@ -217,6 +218,8 @@ Cal comentar que cada vegada que executem una opció de les anomenades anteriorm
 
 **--------------------------------------------------------------------------------------------------------------**
 
+### **2.Enumeració**
+
 En segon lloc tenim l'opció d'enumeració amb l'eina "enumforlinux"
 
 Però, abans de veure el resultat de l'execució del codi i el codi adjunt, explicarem una mica qué es i per a que ha estat  dissenyada Enum4linux és una eina de seguretat informàtica dissenyada per a la enumeració i anàlisi de sistemes basats en el protocol SMB/CIFS. Aquesta utilitat està especialment destinada a la detecció d'informació rellevant en xarxes de Microsoft Windows. Enum4linux es caracteritza per la seva capacitat per a explorar i recopilar informació d'una manera eficient, ajudant els professionals de la seguretat a identificar vulnerabilitats i realitzar auditories de seguretat.
@@ -266,6 +269,8 @@ if os.path.exists(output_file):
 Finalment un cop acabi l'execució del programa torna al menú principal.
 
 **--------------------------------------------------------------------------------------------------------------**
+
+### **3.Escaneig Nmap**
 
 La següent opció que hi ha per executar es l'escaneig Nmap.
 
@@ -323,7 +328,7 @@ Les següents parts de codi fan referència a les altres opcions que falten.
         os.remove(output_file)
 ```
 
-##Text:
+**Opció 3:**
 
 ```
     elif opcio == '3':
@@ -341,7 +346,7 @@ Les següents parts de codi fan referència a les altres opcions que falten.
             os.remove(output_file)
 ```
 
-##Text:
+**Opció 4:**
 
 ```
     elif opcio == '4':
@@ -360,21 +365,24 @@ Les següents parts de codi fan referència a les altres opcions que falten.
             os.remove(output_file)
 ```
 
-##Per tornar al menu amb l'opcio 5:
+Una vegada haguèssim acabat amb aquesta eina, podem tirar cap enrere escrivint el número "5".
 
 ![Descripción de la imagen](/Imatges/15.png)
 
 **--------------------------------------------------------------------------------------------------------------**
 
-##Text:
+### **4.The Harvester**
 
-![Descripción de la imagen](/Imatges/15.png)
+####En quart lloc tenim l'opció 4 "The Harvester".
+The Harvester és una eina de codi obert dissenyada per a la recopilació d'informació en xarxes públiques. Amb funcionalitats avançades, com la cerca de correus electrònics i adreces IP.
 
-##Text:
+![Descripción de la imagen](/Imatges/14.png)
+
+Dins d'aquesta eina haurem d'indicar un domini juntament amb els paràmetres corresponents per a que ens mostri la informació pública del domini atacat.Un cop acabi l'extracció d'informació el programa tornarà automàticament al menú principal:
 
 ![Descripción de la imagen](/Imatges/16.png)
 
-##Text:
+Aquesta part del codi és la que fà referència a l'opció mencionada anteriorment:
 
 ```
     objectiu = input("Introduïu l'objectiu (p. ex: iesebre.com -l 200 -b yahoo): ")
@@ -403,11 +411,12 @@ Les següents parts de codi fan referència a les altres opcions que falten.
         print("No se ha generado el archivo de resultados.")
 ```
 
-##Un cop executat el programa en tornara al menú principal:
-
 **--------------------------------------------------------------------------------------------------------------**
 
-##Text:
+### **OSINT**
+
+Aquesta opció és una opció entre un ventall d'opcions de la llista d'eines OSINT.
+Aquesta opció del que s'encarrega de 
 
 ![Descripción de la imagen](/Imatges/17.png)
 
