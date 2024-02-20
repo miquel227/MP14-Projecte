@@ -415,16 +415,15 @@ Aquesta part del codi és la que fà referència a l'opció mencionada anteriorm
 
 ### **OSINT**
 
-Aquesta opció és una opció entre un ventall d'opcions de la llista d'eines OSINT.
-Aquesta opció del que s'encarrega de 
+Aquesta opció és una opció entre un ventall d'opcions de la llista d'eines OSINT. Aquesta opció no és una eina, sino que és una API que és diu ipinfo.io.
 
 ![Descripción de la imagen](/Imatges/17.png)
 
-##Text:
+El que ens mostra aquesta opció és la localització de la màquina objectiu amb credencials aproximades, i com a l'anterior opció a l'executar aquesta API tornarà al menú principal automàticament.
 
 ![Descripción de la imagen](/Imatges/18.png)
 
-##Text:
+Aquesta part del codi és la que fà referència a l'opció mencionada anteriorment:
 
 ```
   # Demanar a l'usuari la IP que vol geolocalitzar
@@ -453,16 +452,9 @@ Aquesta opció del que s'encarrega de
           print(f'Country: {country}')
           print(f'Location: {location}')
 ```
-
-##Text:
-
- ![Descripción de la imagen](/Imatges/18.png)
-
-##Un cop executat el programa en tornara al menú principal:
-
  **--------------------------------------------------------------------------------------------------------------**
 
-##Text:
+L'última opció fà servir l'eina Shodan que s'encarrega de 
 
  ![Descripción de la imagen](/Imatges/19.png)
 
@@ -528,3 +520,4 @@ Amb l'ópcio número 7 sortirem del programa
   ![Descripción de la imagen](/Imatges/21.png)
 
 ---------------------------------------------------------------
+
