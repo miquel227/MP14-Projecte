@@ -34,7 +34,7 @@ def ssh_audit():
         print("2. Escaneig forçant ipv4")
         print("3. Escaneig amb depuració (debug) ")
         print("4. Mostrar la sortida en format JSON")
-        print("5. Escaneijar tots el ports SSH obersts")
+        print("5. Escanejar tots el ports SSH obersts")
         print("6. Tornar al menú principal.")
 
         opcio = input("Introdueix el número de l'opció que vols: ")

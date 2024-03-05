@@ -13,7 +13,7 @@ def escaneig_Nmap():
         print("2. Escaneig de ports oberts.")
         print("3. Llistat de serveis i versions.")
         print("4. Llistat de vulnerabilitats.")
-        print("5. Tornanr al menú principal.")
+        print("5. Tornar al menú principal.")
         
         opcio = input("Introdueix el número de l'opció que vols: ")
 

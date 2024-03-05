@@ -10,8 +10,8 @@ ip = input("Introdueix la IP que vols escanejar amb enum4linux: ")
 # Nom del fitxer on es guardaran els resultats
 output_file = "resultats_enum4linux.txt"
 
-print("Proces de l'execució d'enum4linux aquestes tres linies no son un error")
-print("Aquest proces tarda uns 30 segons")
+print("Procés de l'execució d'enum4linux aquestes tres linies no son un error")
+print("Aquest procés tarda uns 30 segons")
 try:
     with open(output_file, "w") as output:
         subprocess.run(["/app/MP14-Projecte/enum4linux/enum4linux.pl", "-a", ip], stdout=output)

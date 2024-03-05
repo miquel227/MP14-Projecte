@@ -10,7 +10,7 @@ def executar_auditoriassh():
         print("L'arxiu auditoriassh.py no s'ha trobat.")
 def executar_ennumeracio():
     try:
-        subprocess.run(['python3', 'Auditoria de serveis/Ennumeracio.py'])
+        subprocess.run(['python3', 'Auditoria de serveis/Enumeracio.py'])
     except FileNotFoundError:
         print("L'arxiu Ennumeracio.py no s'ha trobat.")
 def executar_escaneig_nmap():
@@ -39,7 +39,7 @@ def menu():
     while True:
         print("Menú:")
         print("1. Executar Auditoria SSH")
-        print("2. Executar Ennumeració")
+        print("2. Executar Enumeració")
         print("3. Executar Escaneig Nmap")
         print("4. Executar Harvester")
         print("5. Executar OSINT")
