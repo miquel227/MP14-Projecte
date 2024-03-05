@@ -196,12 +196,15 @@ Aquesta és la funció que escaneja els ports d'una adreça IP específica. Ha s
     
     return "\n".join([f"Port {port} és utilitzat per SSH." for port in used_ports])
 ```
+**Opció 6(Tornar al menú principal)**
 
 Finalment tenim l'opció 6 que permet sortir al menú principal.
 
 ![Descripción de la imagen](/Imatges/7.png)
 
 ![Descripción de la imagen](/Imatges/6.png)
+
+Aquesta part del codi és la que fà referència a l'opció mencionada anteriorment:
 
 ```
 elif opcio == '6':
@@ -413,7 +416,7 @@ Aquesta part del codi és la que fà referència a l'opció mencionada anteriorm
 
 **--------------------------------------------------------------------------------------------------------------**
 
-### **OSINT**
+### **5.OSINT**
 
 Aquesta opció és una opció entre un ventall d'opcions de la llista d'eines OSINT. Aquesta opció no és una eina, sino que és una API que és diu ipinfo.io.
 
@@ -454,15 +457,18 @@ Aquesta part del codi és la que fà referència a l'opció mencionada anteriorm
 ```
  **--------------------------------------------------------------------------------------------------------------**
 
-L'última opció fà servir l'eina Shodan que s'encarrega de 
+### **6.Shodan**
+
+L'última opció fà servir l'eina Shodan que s'encarrega de descobrir quins dispositius estan connectats a Internet, així com a recopilar informació sobre aquests dispositius, com ara quins ports estan oberts, quins protocols utilitzen i altres dades rellevants.
 
  ![Descripción de la imagen](/Imatges/19.png)
 
-##Text:
+Com podem veure a la següent captura d'execució de l'opció Shodan ens fà un mapeig dels ports actius de la Ip juntament amb el seu servei corresponent per a cadascún.
 
  ![Descripción de la imagen](/Imatges/20.png)
 
-##Text:
+
+Aquesta part del codi és la que fà referència a l'opció mencionada anteriorment:
 
 ```
 # Inicialitza el client de Shodan amb la clau API
@@ -513,11 +519,13 @@ os.remove(output_file)
 
 
 
-####**Finalment arribem a l'última opció del menú:** 
+####**Opció 7** 
 
-Amb l'ópcio número 7 sortirem del programa
+Després quan has acabat amb l'auditoria i vols sortir del programa, tenim una opció que t'ho permet fer!!! Només ficant el número 7.
 
   ![Descripción de la imagen](/Imatges/21.png)
 
 ---------------------------------------------------------------
 
+Aquí ús deixem el codi utilitzat per a aquesta aplicació d'auditoria:
+[https://github.com/miquel227/MP14-Projecte]()
